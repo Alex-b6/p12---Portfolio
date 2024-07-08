@@ -1,14 +1,16 @@
+@import 'variables';
+
 #about {
-  padding: 1.5rem;
-  background-color: #e0e4e8;
+  padding: $spacing-base;
+  background-color: $color-secondary;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
 
   h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #333;
+    font-size: $font-size-large;
+    margin-bottom: $spacing-base;
+    color: $color-dark;
     text-align: center;
   }
 
@@ -22,26 +24,26 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+    border-bottom: 1px solid $color-gray-lighter;
+    padding-bottom: $spacing-smaller;
+    margin-bottom: $spacing-base;
   }
 
   .section-header {
     cursor: pointer;
-    padding: 1rem;
+    padding: $spacing-base;
     flex: 1;
     text-align: center;
     transition: background-color 0.3s;
   }
 
   .section-header:hover {
-    background-color: #d0d4d8;
+    background-color: lighten($color-secondary, 10%);
   }
 
   h3 {
-    font-size: 1.8rem;
-    color: #555;
+    font-size: $font-size-medium;
+    color: $color-gray;
     margin: 0;
   }
 
@@ -53,22 +55,22 @@
   .content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Ajout de transition pour l'opacité */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
     flex: 1;
-    opacity: 0; /* Ajout d'une opacité initiale */
-    overflow-y: hidden; /* Masquer la barre de défilement */
+    opacity: 0;
+    overflow-y: hidden;
   }
 
   .content.visible {
     max-height: 140px; 
-    opacity: 1; /* Afficher le contenu avec opacité totale */
+    opacity: 1;
     text-align: left;
   }
 
   ul, p {
-    margin: 1rem 0;
-    padding: 1rem;
-    color: #666;
+    margin: $spacing-small 0;
+    padding: $spacing-small;
+    color: $color-gray-light;
     line-height: 1.6;
   }
 
@@ -77,6 +79,6 @@
   }
 
   li {
-    margin-bottom: 0.5rem;
+    margin-bottom: $spacing-smaller;
   }
 }

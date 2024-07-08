@@ -1,7 +1,9 @@
+@import 'variables';
+
 header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
+  background-color: $color-dark;
+  color: $color-light;
+  padding: $spacing-small;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,26 +11,26 @@ header {
 
   h1 {
     margin: 0;
-    color: white;
+    color: $color-light;
   }
 
   .header-buttons {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: $spacing-small;
 
     .sections-dropdown {
       position: relative;
 
       .sections-button {
-        background-color: #555;
-        color: white;
+        background-color: darken($color-gray, 10%);
+        color: $color-light;
         border: none;
-        padding: 0.5rem 1rem;
+        padding: $spacing-smaller $spacing-small;
         cursor: pointer;
 
         &:hover {
-          background-color: #777;
+          background-color: lighten($color-gray, 10%);
         }
       }
 
@@ -36,11 +38,11 @@ header {
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: #444;
-        border: 1px solid #555;
+        background-color: $color-gray-dark;
+        border: 1px solid darken($color-gray, 10%);
         border-radius: 5px;
         z-index: 10;
-        padding: 0.5rem 0;
+        padding: $spacing-smaller 0;
 
         ul {
           list-style: none;
@@ -51,12 +53,12 @@ header {
 
           li {
             margin: 0;
-            padding: 0.5rem 1rem;
+            padding: $spacing-smaller $spacing-small;
 
             a {
-              color: white;
+              color: $color-light;
               text-decoration: none;
-              font-size: 0.85rem;
+              font-size: $font-size-tiny;
 
               &:hover {
                 text-decoration: underline;
@@ -68,38 +70,38 @@ header {
     }
 
     .dark-mode-button {
-      background-color: #555;
-      color: white;
+      background-color: darken($color-gray, 10%);
+      color: $color-light;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: $spacing-smaller $spacing-small;
       cursor: pointer;
 
       &:hover {
-        background-color: #777;
+        background-color: lighten($color-gray, 10%);
       }
 
       &.dark {
-        background-color: #222;
-        color: white;
+        background-color: $color-dark;
+        color: $color-light;
       }
     }
   }
 }
 
 body.dark-mode {
-  background-color: #222;
-  color: white;
+  background-color: $color-dark;
+  color: $color-light;
 
   header {
-    background-color: #000;
+    background-color: darken($color-dark, 10%);
 
     nav a {
-      color: lightgray;
+      color: lighten($color-gray, 30%);
     }
 
     .header-buttons .dark-mode-button {
-      background-color: lightgray;
-      color: black;
+      background-color: lighten($color-gray, 30%);
+      color: $color-dark;
     }
   }
 }

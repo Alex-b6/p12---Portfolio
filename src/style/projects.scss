@@ -1,44 +1,46 @@
+@import 'variables';
+
 #projects {
-  padding: 2rem;
-  background-color: #fff;
+  padding: $spacing-large;
+  background-color: $color-light;
   text-align: center;
 
   h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #555;
+    font-size: $font-size-medium;
+    margin-bottom: $spacing-small;
+    color: $color-gray;
   }
 
   .projects-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: $spacing-small;
     justify-content: center;
 
     .project {
-      background-color: #f4f4f4;
-      border: 1px solid #ddd;
+      background-color: $color-secondary;
+      border: 1px solid $color-gray-lighter;
       border-radius: 8px;
-      padding: 1rem;
+      padding: $spacing-small;
       width: 300px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       cursor: pointer;
 
       h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-        color: #555;
+        font-size: $font-size-small;
+        margin-bottom: $spacing-smaller;
+        color: $color-gray;
       }
 
       p {
-        font-size: 1rem;
-        color: #555;
+        font-size: $font-size-base;
+        color: $color-gray;
       }
 
       a {
-        color: #1e90ff;
+        color: $color-accent;
         text-decoration: none;
-        margin-top: 0.5rem;
+        margin-top: $spacing-smaller;
         display: inline-block;
 
         &:hover {
@@ -58,24 +60,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Assurez-vous que la modale est au-dessus de tout */
+    z-index: 1000;
   }
 
   .modal-content {
-    background: white;
-    padding: 20px;
-    max-width: 80%; /* Ajuster la largeur de la modale */
-    max-height: 80%; /* Ajuster la hauteur de la modale */
-    overflow-y: scroll; /* Activer le défilement vertical si nécessaire */
+    background: $color-light;
+    padding: $spacing-small;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: scroll;
     border-radius: 8px;
     position: relative;
     text-align: left;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
-    /* Masquer la barre de défilement */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    &::-webkit-scrollbar { /* WebKit */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
       width: 0;
       height: 0;
     }
@@ -85,7 +86,7 @@
     }
 
     .carousel {
-      margin-bottom: 1rem;
+      margin-bottom: $spacing-small;
 
       .slick-slider {
         border-radius: 8px;
@@ -116,7 +117,7 @@
         }
 
         &:before {
-          color: white;
+          color: $color-light;
           font-size: 20px;
         }
       }
@@ -135,7 +136,7 @@
           button {
             border-radius: 10px;
             border: none;
-            background-color: #5cacfd;
+            background-color: $color-highlight;
             margin: 0 5px 0 0;
           }
         }
@@ -149,31 +150,31 @@
     }
 
     .short-description {
-      margin-top: 1rem;
+      margin-top: $spacing-small;
       font-size: 1.1rem;
-      color: #333;
+      color: $color-dark;
       line-height: 1.5;
-      margin-bottom: 1rem;
+      margin-bottom: $spacing-small;
     }
 
     .full-description {
-      font-size: 1rem;
-      color: #555;
+      font-size: $font-size-base;
+      color: $color-gray;
       line-height: 1.5;
-      margin-bottom: 2rem;
+      margin-bottom: $spacing-large;
     }
 
     .modal-buttons {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: $spacing-small;
+      margin-top: $spacing-small;
 
       a, button {
-        background-color: #2c93f9;
-        color: white;
+        background-color: $color-primary;
+        color: $color-light;
         border: none;
-        padding: 0.5rem 1rem;
+        padding: $spacing-smaller $spacing-small;
         border-radius: 4px;
         cursor: pointer;
         text-align: center;
@@ -181,7 +182,7 @@
       }
 
       a:hover, button:hover {
-        background-color: #1c86ee;
+        background-color: lighten($color-primary, 10%);
       }
     }
   }
