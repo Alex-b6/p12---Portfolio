@@ -1,0 +1,105 @@
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  h1 {
+    margin: 0;
+    color: white;
+  }
+
+  .header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .sections-dropdown {
+      position: relative;
+
+      .sections-button {
+        background-color: #555;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #777;
+        }
+      }
+
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #444;
+        border: 1px solid #555;
+        border-radius: 5px;
+        z-index: 10;
+        padding: 0.5rem 0;
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+
+          li {
+            margin: 0;
+            padding: 0.5rem 1rem;
+
+            a {
+              color: white;
+              text-decoration: none;
+              font-size: 0.85rem;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dark-mode-button {
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #777;
+      }
+
+      &.dark {
+        background-color: #222;
+        color: white;
+      }
+    }
+  }
+}
+
+body.dark-mode {
+  background-color: #222;
+  color: white;
+
+  header {
+    background-color: #000;
+
+    nav a {
+      color: lightgray;
+    }
+
+    .header-buttons .dark-mode-button {
+      background-color: lightgray;
+      color: black;
+    }
+  }
+}

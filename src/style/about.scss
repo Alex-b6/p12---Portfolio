@@ -1,0 +1,82 @@
+#about {
+  padding: 1.5rem;
+  background-color: #e0e4e8;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-headers {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-header {
+    cursor: pointer;
+    padding: 1rem;
+    flex: 1;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+
+  .section-header:hover {
+    background-color: #d0d4d8;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    color: #555;
+    margin: 0;
+  }
+
+  .content-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Ajout de transition pour l'opacité */
+    flex: 1;
+    opacity: 0; /* Ajout d'une opacité initiale */
+    overflow-y: hidden; /* Masquer la barre de défilement */
+  }
+
+  .content.visible {
+    max-height: 140px; 
+    opacity: 1; /* Afficher le contenu avec opacité totale */
+    text-align: left;
+  }
+
+  ul, p {
+    margin: 1rem 0;
+    padding: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
