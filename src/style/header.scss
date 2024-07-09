@@ -68,40 +68,6 @@ header {
         }
       }
     }
-
-    .dark-mode-button {
-      background-color: darken($color-gray, 10%);
-      color: $color-light;
-      border: none;
-      padding: $spacing-smaller $spacing-small;
-      cursor: pointer;
-
-      &:hover {
-        background-color: lighten($color-gray, 10%);
-      }
-
-      &.dark {
-        background-color: $color-dark;
-        color: $color-light;
-      }
-    }
   }
 }
 
-body.dark-mode {
-  background-color: $color-dark;
-  color: $color-light;
-
-  header {
-    background-color: darken($color-dark, 10%);
-
-    nav a {
-      color: lighten($color-gray, 30%);
-    }
-
-    .header-buttons .dark-mode-button {
-      background-color: lighten($color-gray, 30%);
-      color: $color-dark;
-    }
-  }
-}

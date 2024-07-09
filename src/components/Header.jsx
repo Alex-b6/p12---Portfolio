@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../style/header.scss';
 
 const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
   const [sectionsVisible, setSectionsVisible] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -19,11 +18,6 @@ const Header = () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode', !darkMode);
-  };
 
   const toggleSections = () => {
     setSectionsVisible(!sectionsVisible);
@@ -47,12 +41,6 @@ const Header = () => {
             </nav>
           )}
         </div>
-        <button
-          className={`dark-mode-button ${darkMode ? 'dark' : ''}`}
-          onClick={toggleDarkMode}
-        >
-          {darkMode ? 'Jour' : 'Nuit'}
-        </button>
       </div>
     </header>
   );
