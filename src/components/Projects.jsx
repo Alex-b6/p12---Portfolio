@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Importer les images dynamiquement
-const images = import.meta.glob('../assets/images/*.{png,jpg,jpeg,svg}');
+const images = import.meta.glob('../assets/images/*.{png,jpg,jpeg,svg,webp}');
 
 const loadImages = async () => {
   const imageUrls = {};
@@ -19,17 +19,17 @@ const loadImages = async () => {
 const projectData = [
   {
     title: "Argent Bank",
-    shortDescription: "Une application bancaire en ligne moderne permettant aux utilisateurs de gérer leurs comptes en toute sécurité.",
+    shortDescription: "Une application bancaire en ligne, moderne, permettant aux utilisateurs de gérer leurs comptes et leurs informations en toute sécurité.",
     fullDescription: "Le projet Argent Bank est une application bancaire en ligne développée dans le cadre d'un parcours de formation sur OpenClassrooms. L'application offre une interface utilisateur moderne et réactive, permettant aux utilisateurs de gérer leurs comptes bancaires en toute sécurité. Les principales fonctionnalités incluent la connexion sécurisée, la visualisation des soldes de comptes, l'historique des transactions, et la possibilité de gérer les informations personnelles. Ce projet met en œuvre des technologies web actuelles telles que React pour le front-end et Node.js pour le back-end, garantissant une expérience utilisateur fluide et sécurisée.",
     github: "https://github.com/Alex-b6/P11-ArgentBank-website",
-    images: ["ArgentBank1.png", "ArgentBank2.png", "ArgentBank3.png", "ArgentBank4.png"]
+    images: ["ArgentBank1.webp", "ArgentBank2.webp", "ArgentBank3.webp", "ArgentBank4.webp"]
   },
   {
-    title: "Projet 2",
-    shortDescription: "Description courte du projet 2.",
-    fullDescription: "Description complète du projet 2.",
-    github: "lien-vers-github-projet-2",
-    images: ["image4.jpg", "image5.jpg", "image6.jpg"]
+    title: "Print-it",
+    shortDescription: "Une application web de personnalisation et de commande de produits imprimés, utilisée pour faire nos premiers pas avec Javascript.",
+    fullDescription: "Dans le cadre de ce projet, il était demandé de dynamiser ce site internet. Afin d'effectuer nos débuts avec Javascript, il a fallu suivre plusieurs étapes pour réaliser le carrousel. Nous avons commencés par mettre à jour le HTML en y ajoutant les flèches. une fois intégrées, nous devions rendre ces dernières interactives avec des 'Eventlisteners'. Après cette étape, il a fallu ajouter des bullet points puis mettre en place la logique de défillement tout en réalisant une boucle.",
+    github: "https://github.com/Alex-b6/Print-it",
+    images: ["Print-it1.webp", "Print-it2.webp", "Print-it3.webp", "Print-it4.webp"]
   },
   // Ajoutez d'autres projets ici
 ];
