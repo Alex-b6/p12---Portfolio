@@ -38,7 +38,7 @@
   }
 
   .section-header:hover {
-    background-color: lighten($color-secondary, 10%);
+    background-color: darken($color-secondary, 10%);
   }
 
   h3 {
