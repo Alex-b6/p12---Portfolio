@@ -20,7 +20,7 @@ const About = () => {
   return (
     <section id="about">
       <h2>À propos de moi</h2>
-      <p>Je suis un développeur web débutant ayant pour but de parfaire mes compétences et d'élargir mes connaissances (avec l'aide d'un peu ... beaucoup de café).</p>
+      <p className="presentation">Je suis un développeur web débutant ayant pour but de parfaire mes compétences et d'élargir mes connaissances (avec l'aide d'un peu ... beaucoup de café).</p>
 
       <div className="section-container">
         <div className="section-headers">
