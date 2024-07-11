@@ -82,6 +82,29 @@
       height: 0;
     }
 
+    .modal-close-button {
+      position: absolute;
+      top: $spacing-small;
+      right: $spacing-small;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: $color-gray;
+
+      &:hover {
+        color: $color-dark;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1rem;
+      }
+    }
+
     h2 {
       margin-top: 0;
       font-size: $font-size-large;

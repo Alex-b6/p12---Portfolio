@@ -42,12 +42,13 @@ const Modal = ({ project, onClose, imageUrls }) => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close-button" onClick={onClose}>×</button>
         <h2>{project.title}</h2>
         <div className="carousel">
           <Slider {...settings}>
@@ -68,6 +69,7 @@ const Modal = ({ project, onClose, imageUrls }) => {
     </div>
   );
 };
+
 
 
 const Projects = () => {
