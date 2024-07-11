@@ -25,6 +25,7 @@
       width: 300px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       cursor: pointer;
+      transition: width 0.3s ease;
 
       h3 {
         font-size: $font-size-small;
@@ -68,7 +69,7 @@
     padding: $spacing-small;
     max-width: 80%;
     max-height: 80%;
-    overflow-y: scroll;
+    overflow-y: auto;
     border-radius: 8px;
     position: relative;
     text-align: left;
@@ -83,6 +84,16 @@
 
     h2 {
       margin-top: 0;
+      font-size: $font-size-large;
+      color: $color-dark;
+
+      @media (max-width: 768px) {
+        font-size: $font-size-medium;
+      }
+
+      @media (max-width: 480px) {
+        font-size: $font-size-small;
+      }
     }
 
     .carousel {
@@ -155,6 +166,14 @@
       color: $color-dark;
       line-height: 1.5;
       margin-bottom: $spacing-small;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+      }
     }
 
     .full-description {
@@ -162,6 +181,14 @@
       color: $color-gray;
       line-height: 1.5;
       margin-bottom: $spacing-large;
+
+      @media (max-width: 768px) {
+        font-size: $font-size-small;
+      }
+
+      @media (max-width: 480px) {
+        font-size: $font-size-smaller;
+      }
     }
 
     .modal-buttons {
@@ -179,11 +206,64 @@
         cursor: pointer;
         text-align: center;
         text-decoration: none;
+
+        @media (max-width: 768px) {
+          font-size: $font-size-small;
+        }
+
+        @media (max-width: 480px) {
+          font-size: $font-size-smaller;
+          padding: $spacing-small $spacing-smaller;
+        }
       }
 
       a:hover, button:hover {
         background-color: lighten($color-primary, 10%);
       }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: $spacing-small;
+
+    .projects-grid {
+      .project {
+        width: 45%; // Adjust width progressively for screens below 1024px
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .projects-grid {
+      .project {
+        width: 60%; // Adjust width progressively for screens below 900px
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: $spacing-smaller;
+
+    .projects-grid {
+      .project {
+        width: 100%; // Full width for screens below 768px
+      }
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      padding: $spacing-small;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: $spacing-smaller;
+
+    .modal-content {
+      max-width: 95%;
+      max-height: 95%;
+      padding: $spacing-smaller;
     }
   }
 }
