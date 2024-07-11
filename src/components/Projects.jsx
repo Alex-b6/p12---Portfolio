@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import '../style/projects.scss';
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Importer les images dynamiquement
@@ -27,66 +27,30 @@ const projectData = [
   {
     title: "Print-it",
     shortDescription: "Une application web de personnalisation et de commande de produits imprimés, utilisée pour faire nos premiers pas avec Javascript.",
-    fullDescription: "Dans le cadre de ce projet, il était demandé de dynamiser ce site internet. Afin d'effectuer nos débuts avec Javascript, il a fallu suivre plusieurs étapes pour réaliser le carrousel. Nous avons commencés par mettre à jour le HTML en y ajoutant les flèches. une fois intégrées, nous devions rendre ces dernières interactives avec des 'Eventlisteners'. Après cette étape, il a fallu ajouter des bullet points puis mettre en place la logique de défillement tout en réalisant une boucle.",
+    fullDescription: "Dans le cadre de ce projet, il était demandé de dynamiser ce site internet. Afin d'effectuer nos débuts avec Javascript, il a fallu suivre plusieurs étapes pour réaliser le carrousel. Nous avons commencé par mettre à jour le HTML en y ajoutant les flèches. Une fois intégrées, nous devions rendre ces dernières interactives avec des 'Eventlisteners'. Après cette étape, il a fallu ajouter des bullet points puis mettre en place la logique de défilement tout en réalisant une boucle.",
     github: "https://github.com/Alex-b6/Print-it",
     images: ["Print-it1.webp", "Print-it2.webp", "Print-it3.webp", "Print-it4.webp"]
   },
-  // Ajoutez d'autres projets ici
 ];
-
-const Modal = ({ project, onClose, imageUrls }) => {
-  if (!project) return null;
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
-  return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close-button" onClick={onClose}>×</button>
-        <h2>{project.title}</h2>
-        <div className="carousel">
-          <Slider {...settings}>
-            {project.images.map((image, index) => (
-              <div key={index}>
-                <img src={imageUrls[image]} alt={`${project.title} ${index + 1}`} />
-              </div>
-            ))}
-          </Slider>
-        </div>
-        <p className="short-description">{project.shortDescription}</p>
-        <p className="full-description">{project.fullDescription}</p>
-        <div className="modal-buttons">
-          <a href={project.github} target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
-          <button onClick={onClose}>Fermer</button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
 
 const Projects = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [imageUrls, setImageUrls] = useState({});
 
+  // Fonction pour ouvrir la modal et définir le projet sélectionné
   const openModal = (project) => {
     setSelectedProject(project);
     setModalIsOpen(true);
   };
 
+  // Fonction pour fermer la modal et réinitialiser le projet sélectionné
   const closeModal = () => {
     setModalIsOpen(false);
     setSelectedProject(null);
   };
 
+  // Effet pour charger les URLs des images une fois que le composant est monté
   useEffect(() => {
     loadImages().then(setImageUrls);
   }, []);
@@ -105,6 +69,46 @@ const Projects = () => {
       </div>
       {modalIsOpen && <Modal project={selectedProject} onClose={closeModal} imageUrls={imageUrls} />}
     </section>
+  );
+};
+
+const Modal = ({ project, onClose, imageUrls }) => {
+  // Vérifie si aucun projet n'est passé en tant que prop, retourne null si c'est le cas
+  if (!project) return null;
+
+  // Configuration des paramètres pour le carrousel (Slider)
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close-button" onClick={onClose}>×</button>
+        <h2>{project.title}</h2>
+        <div className="carousel">
+          <Slider {...settings}>
+            {/* Mapping à travers les images du projet pour les afficher dans le carrousel */}
+            {project.images.map((image, index) => (
+              <div key={index}>
+                {/* Affichage de chaque image à partir de son URL chargée dynamiquement avec lazy loading */}
+                <img src={imageUrls[image]} alt={`${project.title} ${index + 1}`} loading="lazy" />
+              </div>
+            ))}
+          </Slider>
+        </div>
+        <p className="short-description">{project.shortDescription}</p>
+        <p className="full-description">{project.fullDescription}</p>
+        <div className="modal-buttons">
+          <a href={project.github} target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+          <button onClick={onClose}>Fermer</button>
+        </div>
+      </div>
+    </div>
   );
 };
 

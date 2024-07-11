@@ -2,9 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import '../style/header.scss';
 
 const Header = () => {
+  // Déclaration de l'état local sectionsVisible avec useState
   const [sectionsVisible, setSectionsVisible] = useState(false);
+  // Référence à l'élément DOM dropdown
   const dropdownRef = useRef(null);
-
+  
+  // Effet pour gérer les clics en dehors du menu déroulant
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -19,6 +22,7 @@ const Header = () => {
     };
   }, []);
 
+  // Fonction pour basculer l'état des sections visibles
   const toggleSections = () => {
     setSectionsVisible(!sectionsVisible);
   };

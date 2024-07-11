@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import '../style/about.scss';
 
 const About = () => {
+  // Déclaration de l'état local visibleSections avec useState
   const [visibleSections, setVisibleSections] = useState({
     skills: false,
     education: false,
     goals: false,
   });
 
+  // Fonction pour basculer l'état d'une section spécifique
   const toggleSection = (section) => {
     setVisibleSections(prevState => ({
       ...prevState,
