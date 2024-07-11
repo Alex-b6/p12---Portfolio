@@ -26,6 +26,9 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       cursor: pointer;
       transition: width 0.3s ease;
+      &:hover {
+        background-color: lighten($color-secondary, 5%);
+      }
 
       h3 {
         font-size: $font-size-small;
@@ -189,6 +192,7 @@
       color: $color-dark;
       line-height: 1.5;
       margin-bottom: $spacing-small;
+      text-align: justify;
 
       @media (max-width: 768px) {
         font-size: 1rem;
@@ -204,6 +208,7 @@
       color: $color-gray;
       line-height: 1.5;
       margin-bottom: $spacing-large;
+      text-align: justify;
 
       @media (max-width: 768px) {
         font-size: $font-size-small;
