@@ -31,19 +31,17 @@ const Header = () => {
           <button className="sections-button" onClick={toggleSections}>
             Sections
           </button>
-          {sectionsVisible && (
-            <nav>
-              <ul>
-                <li><a href="#about" onClick={() => setSectionsVisible(false)}>À propos</a></li>
-                <li><a href="#projects" onClick={() => setSectionsVisible(false)}>Projets</a></li>
-                <li><a href="#contact" onClick={() => setSectionsVisible(false)}>Contact</a></li>
-              </ul>
-            </nav>
-          )}
+          <nav className={`sections-menu ${sectionsVisible ? 'visible' : ''}`}>
+            <ul>
+              <li><a href="#about" onClick={() => setSectionsVisible(false)}>À propos</a></li>
+              <li><a href="#projects" onClick={() => setSectionsVisible(false)}>Projets</a></li>
+              <li><a href="#contact" onClick={() => setSectionsVisible(false)}>Contact</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
   );
-}
+};
 
 export default Header;
