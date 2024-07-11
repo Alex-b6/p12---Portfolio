@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import logo from '../assets/images/AB6logo.webp';
 import '../style/header.scss';
 
 const Header = () => {
@@ -29,7 +30,10 @@ const Header = () => {
 
   return (
     <header>
-      <h1>Mon Portfolio</h1>
+      <div className="logo-title">
+        <img src={logo} alt="Logo" className="logo" />
+        <h1>Mon Portfolio</h1>
+      </div>
       <div className="header-buttons">
         <div className="sections-dropdown" ref={dropdownRef}>
           <button className="sections-button" onClick={toggleSections}>

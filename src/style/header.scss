@@ -9,9 +9,26 @@ header {
   align-items: center;
   position: relative;
 
-  h1 {
-    margin: 0;
-    color: $color-light;
+  .logo-title {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      width: 70px; // Taille de l'image
+      height: auto;
+      margin-right: $spacing-smaller;
+      border-radius: 8px;
+      transition: transform 0.3s ease; // Transition pour l'effet de zoom
+
+      &:hover {
+        transform: scale(1.2); // Zoomer l'image au survol
+      }
+    }
+
+    h1 {
+      margin: 0;
+      color: $color-light;
+    }
   }
 
   .header-buttons {
@@ -85,6 +102,12 @@ header {
     flex-direction: row;
     justify-content: space-between;
 
+    .logo-title {
+      .logo {
+        width: 50px; // Taille de l'image pour les écrans <= 768px
+      }
+    }
+
     h1 {
       font-size: $font-size-medium;
     }
@@ -118,6 +141,12 @@ header {
   @media (max-width: 480px) {
     h1 {
       font-size: $font-size-small;
+    }
+
+    .logo-title {
+      .logo {
+        width: 40px; // Taille de l'image pour les écrans <= 768px
+      }
     }
 
     .header-buttons {
